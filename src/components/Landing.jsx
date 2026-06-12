@@ -119,8 +119,8 @@ function Landing() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-gradient-to-br from-primary to-primary-dark rounded-xl flex items-center justify-center shadow-lg shadow-primary/20 animate-glow-pulse">
-                <HardHat className="w-5 h-5 text-white" />
+              <div className="w-10 h-10 flex items-center justify-center shrink-0">
+                <img src="/unnamed.webp" alt="Logo" className="w-full h-full object-contain scale-125" />
               </div>
               <div>
                 <div className="font-bold text-sm" style={{ color: 'var(--text-primary)' }}>Devna Engineers</div>
@@ -244,8 +244,8 @@ function Landing() {
                 <div className="w-96 h-96 rounded-3xl flex items-center justify-center animate-float" style={{ background: 'linear-gradient(135deg, rgba(26,120,194,0.1), white, rgba(76,175,80,0.1))', border: '1px solid rgba(255,255,255,0.5)', boxShadow: '0 20px 60px rgba(26,120,194,0.1)' }}>
                   <div className="w-80 h-80 rounded-2xl p-6 flex flex-col gap-3" style={{ background: 'var(--bg-card)', boxShadow: 'var(--shadow-lg)', border: '1px solid var(--border)' }}>
                     <div className="flex items-center gap-3 pb-3" style={{ borderBottom: '1px solid var(--border)' }}>
-                      <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-primary-dark flex items-center justify-center">
-                        <HardHat className="w-4 h-4 text-white" />
+                      <div className="w-8 h-8 flex items-center justify-center shrink-0">
+                        <img src="/unnamed.webp" alt="Logo" className="w-full h-full object-contain scale-125" />
                       </div>
                       <div className="text-xs font-semibold" style={{ color: 'var(--text-primary)' }}>Devna HRMS Dashboard</div>
                     </div>
@@ -506,8 +506,8 @@ function Landing() {
           <div className="grid sm:grid-cols-3 gap-8 mb-8">
             <div>
               <div className="flex items-center gap-2 mb-4">
-                <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-primary-dark flex items-center justify-center">
-                  <HardHat className="w-4 h-4 text-white" />
+                <div className="w-8 h-8 flex items-center justify-center shrink-0">
+                  <img src="/unnamed.webp" alt="Logo" className="w-full h-full object-contain scale-125" />
                 </div>
                 <span className="font-bold text-sm" style={{ color: 'var(--text-primary)' }}>Devna Engineers</span>
               </div>
