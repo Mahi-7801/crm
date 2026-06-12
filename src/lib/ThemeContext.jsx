@@ -12,7 +12,16 @@ const ROLES = {
 
 export function ThemeProvider({ children }) {
   const [dark, setDark] = useState(() => localStorage.getItem('devna_dark') === 'true')
-  const [role, setRole] = useState(() => localStorage.getItem('devna_role') || 'super_admin')
+  const [role, setRole] = useState(() => {
+    const savedUser = localStorage.getItem('devna_user')
+    if (savedUser) {
+      try {
+        const parsed = JSON.parse(savedUser)
+        if (parsed && parsed.role) return parsed.role
+      } catch (e) {}
+    }
+    return localStorage.getItem('devna_role') || 'super_admin'
+  })
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false)
 
   useEffect(() => {

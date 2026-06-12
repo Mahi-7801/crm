@@ -131,20 +131,13 @@ function Landing() {
               <a href="#features" className="text-sm" style={{ color: 'var(--text-secondary)' }} onMouseOver={e => e.target.style.color = 'var(--color-primary)'} onMouseOut={e => e.target.style.color = 'var(--text-secondary)'}>Features</a>
               <a href="#stats" className="text-sm" style={{ color: 'var(--text-secondary)' }} onMouseOver={e => e.target.style.color = 'var(--color-primary)'} onMouseOut={e => e.target.style.color = 'var(--text-secondary)'}>Impact</a>
               <a href="#testimonials" className="text-sm" style={{ color: 'var(--text-secondary)' }} onMouseOver={e => e.target.style.color = 'var(--color-primary)'} onMouseOut={e => e.target.style.color = 'var(--text-secondary)'}>Testimonials</a>
-              <div className="flex gap-3">
-                <button onClick={() => navigate('/employee')}
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold transition-all"
-                  style={{ border: '1px solid var(--border)', color: 'var(--color-accent)' }}
-                  onMouseOver={e => { e.target.style.background = 'var(--color-accent-light)'; e.target.style.borderColor = 'var(--color-accent)' }}
-                  onMouseOut={e => { e.target.style.background = 'transparent'; e.target.style.borderColor = 'var(--border)' }}>
-                  <LogIn className="w-4 h-4" /> Employee
-                </button>
+              <div className="flex">
                 <button onClick={() => navigate('/login')}
                   className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold text-white shadow-lg transition-all"
-                  style={{ background: 'linear-gradient(135deg, var(--color-primary), var(--color-primary-dark))', boxShadow: '0 4px 14px rgba(26,120,194,0.25)' }}
+                  style={{ background: 'linear-gradient(135deg, var(--color-primary), var(--color-primary-dark))', boxShadow: '0 4px 14 rgba(26,120,194,0.25)' }}
                   onMouseOver={e => e.target.style.boxShadow = '0 4px 20px rgba(26,120,194,0.4)'}
                   onMouseOut={e => e.target.style.boxShadow = '0 4px 14px rgba(26,120,194,0.25)'}>
-                  <ShieldCheck className="w-4 h-4" /> Admin
+                  <ShieldCheck className="w-4 h-4" /> Admin Login
                 </button>
               </div>
             </nav>
@@ -158,13 +151,10 @@ function Landing() {
             <a href="#features" onClick={() => setMenuOpen(false)} className="block text-sm py-2" style={{ color: 'var(--text-secondary)' }}>Features</a>
             <a href="#stats" onClick={() => setMenuOpen(false)} className="block text-sm py-2" style={{ color: 'var(--text-secondary)' }}>Impact</a>
             <a href="#testimonials" onClick={() => setMenuOpen(false)} className="block text-sm py-2" style={{ color: 'var(--text-secondary)' }}>Testimonials</a>
-            <div className="flex gap-3 pt-2">
-              <button onClick={() => navigate('/employee')}
-                className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold"
-                style={{ border: '1px solid var(--color-accent)', color: 'var(--color-accent)' }}>Employee</button>
+            <div className="flex pt-2">
               <button onClick={() => navigate('/login')}
-                className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold text-white"
-                style={{ background: 'var(--color-primary)' }}>Admin</button>
+                className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold text-white"
+                style={{ background: 'var(--color-primary)' }}>Admin Login</button>
             </div>
           </div>
         )}
@@ -203,24 +193,17 @@ function Landing() {
                 streamlining attendance, payroll, asset tracking, and compliance under one unified dashboard.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                <button onClick={() => navigate('/employee')}
+                <button onClick={() => navigate('/login')}
                   className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 rounded-2xl text-base font-semibold text-white overflow-hidden transition-all duration-300 hover:scale-[1.02]"
-                  style={{ background: 'linear-gradient(135deg, var(--color-accent), #388E3C)', boxShadow: '0 8px 30px rgba(76,175,80,0.35)' }}
-                  onMouseOver={e => e.target.style.boxShadow = '0 8px 40px rgba(76,175,80,0.5)'}
-                  onMouseOut={e => e.target.style.boxShadow = '0 8px 30px rgba(76,175,80,0.35)'}>
+                  style={{ background: 'linear-gradient(135deg, var(--color-primary), var(--color-primary-dark))', boxShadow: '0 8px 30px rgba(26,120,194,0.35)' }}
+                  onMouseOver={e => e.target.style.boxShadow = '0 8px 40px rgba(26,120,194,0.5)'}
+                  onMouseOut={e => e.target.style.boxShadow = '0 8px 30px rgba(26,120,194,0.35)'}>
                   <span className="relative flex items-center gap-3">
-                    <LogIn className="w-5 h-5" /> Employee Portal <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                    <ShieldCheck className="w-5 h-5" /> Admin Login <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </span>
                   <span className="absolute inset-0 rounded-2xl overflow-hidden">
                     <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-shimmer" />
                   </span>
-                </button>
-                <button onClick={() => navigate('/login')}
-                  className="group inline-flex items-center justify-center gap-3 px-8 py-4 rounded-2xl text-base font-semibold transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-[1.02]"
-                  style={{ border: '2px solid rgba(26,120,194,0.3)', color: 'var(--color-primary)' }}
-                  onMouseOver={e => { e.target.style.background = 'var(--color-primary)'; e.target.style.color = 'white'; e.target.style.borderColor = 'var(--color-primary)' }}
-                  onMouseOut={e => { e.target.style.background = 'transparent'; e.target.style.color = 'var(--color-primary)'; e.target.style.borderColor = 'rgba(26,120,194,0.3)' }}>
-                  <ShieldCheck className="w-5 h-5" /> Admin Login <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </button>
               </div>
               <div className="flex items-center gap-6 mt-8 justify-center lg:justify-start">
@@ -480,14 +463,7 @@ function Landing() {
             <p className="mb-10 max-w-xl mx-auto" style={{ color: 'var(--text-secondary)' }}>
               Join 50+ engineering teams already using Devna HRMS. Get started with a single click.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button onClick={() => navigate('/employee')}
-                className="group inline-flex items-center gap-3 px-8 py-4 rounded-2xl text-white font-semibold transition-all duration-300 hover:scale-[1.02]"
-                style={{ background: 'linear-gradient(135deg, var(--color-accent), #388E3C)', boxShadow: '0 8px 30px rgba(76,175,80,0.35)' }}
-                onMouseOver={e => e.target.style.boxShadow = '0 8px 40px rgba(76,175,80,0.5)'}
-                onMouseOut={e => e.target.style.boxShadow = '0 8px 30px rgba(76,175,80,0.35)'}>
-                <LogIn className="w-5 h-5" /> Employee Login <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </button>
+            <div className="flex justify-center">
               <button onClick={() => navigate('/login')}
                 className="group inline-flex items-center gap-3 px-8 py-4 rounded-2xl text-white font-semibold transition-all duration-300 hover:scale-[1.02]"
                 style={{ background: 'linear-gradient(135deg, var(--color-primary), var(--color-primary-dark))', boxShadow: '0 8px 30px rgba(26,120,194,0.35)' }}
@@ -518,9 +494,9 @@ function Landing() {
             <div>
               <h4 className="text-xs font-semibold uppercase tracking-wider mb-4" style={{ color: 'var(--text-primary)' }}>Quick Links</h4>
               <div className="space-y-2">
-                {['Features', 'Impact', 'Testimonials', 'Employee Portal', 'Admin Login'].map(link => (
-                  <a key={link} href={link === 'Employee Portal' || link === 'Admin Login' ? undefined : `#${link.toLowerCase()}`}
-                    onClick={link === 'Employee Portal' ? () => navigate('/employee') : link === 'Admin Login' ? () => navigate('/login') : undefined}
+                {['Features', 'Impact', 'Testimonials', 'Admin Login'].map(link => (
+                  <a key={link} href={link === 'Admin Login' ? undefined : `#${link.toLowerCase()}`}
+                    onClick={link === 'Admin Login' ? () => navigate('/login') : undefined}
                     className="block text-xs cursor-pointer transition-colors" style={{ color: 'var(--text-muted)' }}
                     onMouseOver={e => e.target.style.color = 'var(--color-primary)'}
                     onMouseOut={e => e.target.style.color = 'var(--text-muted)'}>

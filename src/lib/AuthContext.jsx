@@ -1,5 +1,6 @@
 import { createContext, useContext, useState } from 'react'
 import { Navigate, useLocation } from 'react-router-dom'
+import { useTheme } from './ThemeContext'
 
 const AuthContext = createContext(null)
 
@@ -23,6 +24,7 @@ const USERS = {
 }
 
 export function AuthProvider({ children }) {
+  const { switchRole } = useTheme()
   const [user, setUser] = useState(() => {
     const saved = localStorage.getItem('devna_user')
     return saved ? JSON.parse(saved) : null
@@ -47,6 +49,7 @@ export function AuthProvider({ children }) {
       localStorage.setItem('devna_user', JSON.stringify(userData))
       localStorage.setItem('devna_role', found.role)
       setUser(userData)
+      switchRole(found.role)
       return null
     }
     return 'Invalid email or password'
@@ -58,7 +61,9 @@ export function AuthProvider({ children }) {
       setActiveSession(null)
     }
     localStorage.removeItem('devna_user')
+    localStorage.removeItem('devna_role')
     setUser(null)
+    switchRole('super_admin')
   }
 
   return (

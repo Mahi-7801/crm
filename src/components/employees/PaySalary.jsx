@@ -1,6 +1,7 @@
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Navigate } from 'react-router-dom'
 import { ArrowLeft, DollarSign, Sun, Moon, Star, Clock, AlertCircle } from 'lucide-react'
+import { useTheme } from '../../lib/ThemeContext'
 
 const initialAllEmployees = [
   { id: 'EMP001', name: 'Rajesh Kumar', dept: 'Production', shift: 'Morning', monthlyHrs: 176, perDay: 2045, otHrs: 18, otAmount: 2700, basic: 45000, status: 'Active' },
@@ -17,7 +18,12 @@ const shiftIcons = { Morning: Sun, Evening: Star, Night: Moon }
 const shiftColors = { Morning: '#4CAF50', Evening: '#1A78C2', Night: '#1A78C2' }
 
 function PaySalary() {
+  const { role } = useTheme()
   const navigate = useNavigate()
+
+  if (role !== 'super_admin') {
+    return <Navigate to="/app/dashboard" replace />
+  }
   const [allEmployees, setAllEmployees] = useState(() => {
     const saved = localStorage.getItem('hrms_salary_data')
     if (saved) return JSON.parse(saved)

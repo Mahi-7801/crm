@@ -1,4 +1,4 @@
-import { NavLink, useLocation } from 'react-router-dom'
+import { NavLink, useLocation, useNavigate } from 'react-router-dom'
 import { useAuth } from '../../lib/AuthContext'
 import { useTheme } from '../../lib/ThemeContext'
 import {
@@ -57,8 +57,9 @@ const navItems = [
 ]
 
 function Sidebar({ collapsed, mobileOpen, onClose }) {
-  const { user } = useAuth()
+  const { user, logout } = useAuth()
   const { dark, toggleDark, role, switchRole, ROLES } = useTheme()
+  const navigate = useNavigate()
 
   const visibleItems = navItems.filter(item => {
     if (item.roles) return item.roles.includes(role)
@@ -130,7 +131,7 @@ function Sidebar({ collapsed, mobileOpen, onClose }) {
             </div>
           )}
           <div className="flex w-full">
-            <button onClick={() => { localStorage.removeItem('devna_user'); window.location.href = '/login' }}
+            <button onClick={() => { logout(); navigate('/login', { replace: true }) }}
               className="flex items-center justify-center p-2 rounded-lg transition-colors w-full" style={{ color: 'var(--text-muted)' }} title="Sign Out">
               <LogOut className="w-4 h-4" /> {!collapsed && <span className="ml-2 text-sm font-medium">Sign Out</span>}
             </button>

@@ -1,9 +1,15 @@
 import { useState, useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Navigate } from 'react-router-dom'
 import { TrendingUp, Save, DollarSign, Search, CheckCircle } from 'lucide-react'
+import { useTheme } from '../../lib/ThemeContext'
 
 function SalaryIncreases() {
+  const { role } = useTheme()
   const navigate = useNavigate()
+
+  if (role !== 'super_admin') {
+    return <Navigate to="/app/dashboard" replace />
+  }
   const [employees, setEmployees] = useState([])
   const [searchTerm, setSearchTerm] = useState('')
   const [editingId, setEditingId] = useState(null)
